@@ -52,12 +52,17 @@
         "project": "./tsconfig.json"
       },
       "plugins": [
+        "react",
         "@typescript-eslint"
       ],
       "extends": [
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
-        "plugin:@typescript-eslint/recommended-requiring-type-checking"
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
+        "prettier"
       ],
       "rules": {
         // This rule is already covered by the TypeScript compiler.
@@ -66,7 +71,8 @@
         "import/no-unresolved": "off",
         "no-use-before-define": "off",
         "@typescript-eslint/no-use-before-define": "warn",
-        "react/jsx-filename-extension": "off"
+        "react/jsx-filename-extension": "off",
+        "import/prefer-default-export": "off"
       }
     }
   ]
