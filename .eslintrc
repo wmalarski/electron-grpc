@@ -8,6 +8,9 @@
     "airbnb",
     "airbnb/hooks"
   ],
+  "globals": {
+    "JSX": true
+  },
   "rules": {
     "import/no-extraneous-dependencies": [
       "error",
@@ -23,8 +26,7 @@
       {
         "ignoreUrls": true
       }
-    ],
-    "sort-imports": "warn"
+    ]
   },
   "settings": {
     "import/resolver": {
@@ -58,7 +60,6 @@
       "extends": [
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
-        "plugin:@typescript-eslint/recommended-requiring-type-checking",
         "eslint:recommended",
         "plugin:react/recommended",
         "plugin:react-hooks/recommended",
@@ -69,10 +70,17 @@
         "import/default": "off",
         // This rule is already covered by the TypeScript compiler.
         "import/no-unresolved": "off",
+        "import/extensions": "off",
         "no-use-before-define": "off",
         "@typescript-eslint/no-use-before-define": "warn",
         "react/jsx-filename-extension": "off",
-        "import/prefer-default-export": "off"
+        "import/prefer-default-export": "off",
+        "@typescript-eslint/no-unused-vars": [
+          2,
+          {
+            "args": "none"
+          }
+        ]
       }
     }
   ]

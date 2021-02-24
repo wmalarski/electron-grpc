@@ -9,7 +9,9 @@
     "prod": "rimraf dist && cross-env NODE_ENV=production webpack --progress --color",
     "test": "mocha -r ts-node/register -r tsconfig-paths/register \"test/**/*.ts\"",
     "build:win": "electron-builder build --win --x64",
-    "build:mac": "electron-builder build --mac --x64"
+    "build:mac": "electron-builder build --mac --x64",
+    "postinstall:grpc": "npm rebuild --target=11.3.0 --runtime=electron --dist-url=https://atom.io/download/electron",
+    "generate:grpc": "grpc_tools_node_protoc --js_out=import_style=commonjs,binary:src/renderer/grpc --grpc_out=generate_package_definition:src/renderer/grpc protos/greeter.proto"
   },
   "build": {
     "appId": "com.wmalarski.electron-grpc",
@@ -34,7 +36,8 @@
   "author": "Wojciech Malarski",
   "license": "MIT",
   "dependencies": {
-    "grpc": "^1.24.5",
+    "@grpc/grpc-js": "^1.2.8",
+    "google-protobuf": "^3.15.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router": "^5.2.0",
@@ -63,6 +66,7 @@
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "file-loader": "^6.2.0",
+    "grpc-tools": "^1.10.0",
     "html-webpack-plugin": "^5.2.0",
     "lodash": "^4.17.21",
     "mocha": "^8.3.0",
