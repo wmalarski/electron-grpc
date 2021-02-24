@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import * as React from "react";
 
 export interface MessageInputFormResult {
   message: string;
@@ -13,7 +13,7 @@ export default function MessageInputForm(
 ): JSX.Element {
   const { onSubmit } = props;
 
-  const [message, setMessage] = useState<string>("");
+  const [message, setMessage] = React.useState<string>("");
 
   return (
     <form

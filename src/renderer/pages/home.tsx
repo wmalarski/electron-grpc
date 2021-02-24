@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import MessageInputForm from "../grpc/components/messageInputForm";
 import { sendHello } from "../grpc/functions";
 
